@@ -1,0 +1,16 @@
+body {
+    background-color: yellow;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+    text-align: center;
+    
+  }
+  
