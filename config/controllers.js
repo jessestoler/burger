@@ -2,6 +2,7 @@ var express = require("express");
 
 var router = express.Router();
 
+var hbsObject;
 
 var cat = require("../models/burger.js");
 
@@ -9,7 +10,7 @@ var cat = require("../models/burger.js");
 
 router.get("/", function(req, res) {
   cat.all(function(data) {
-    var hbsObject = {
+    hbsObject = {
       burgers: data
     }
     
@@ -18,6 +19,11 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
+
+router.get("/", function(req, res) {
+ res.json(hbsObject);
+  });
+  
 
 router.post("/api/cats", function(req, res) {
   cat.create([
@@ -34,7 +40,7 @@ router.post("/api/cats", function(req, res) {
 router.put("/api/cats/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  
  
 
   cat.update({
