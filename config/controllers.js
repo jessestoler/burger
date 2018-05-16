@@ -20,9 +20,7 @@ router.get("/", function(req, res) {
   });
 });
 
-router.get("/", function(req, res) {
- res.json(hbsObject);
-  });
+
   
 
 router.post("/api/cats", function(req, res) {
